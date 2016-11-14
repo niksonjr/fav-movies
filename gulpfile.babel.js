@@ -28,6 +28,21 @@ gulp.task('transpile', () => {
         .pipe(gulp.dest('dist/scripts'));
 });
 
+gulp.task('tests', () => {
+    const bundler = browserify({
+        entries: './src/tests.js',
+        debug: true
+    });
+
+    bundler.transform(babelify);
+
+    bundler.bundle()
+        .on('error', err => console.log(err))
+        .pipe(source('tests.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest('dist/scripts'));
+});
+
 let buildTasks = ['transpile'];
 
 gulp.task('build', buildTasks);

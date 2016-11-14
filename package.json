@@ -20,6 +20,7 @@
         "babel-register": "^6.11.5",
         "babelify": "^7.3.0",
         "browserify": "^13.0.1",
+        "expect": "^1.20.2",
         "gsap": "1.18.5",
         "gulp": "3.9.1",
         "gulp-if": "2.0.1",
